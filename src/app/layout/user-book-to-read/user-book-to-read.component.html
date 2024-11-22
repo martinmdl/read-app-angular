@@ -1,9 +1,0 @@
-<h2 class="profile-content-title">Libros a leer</h2>
-<section class="cards-profile-container">
-    @for (item of booksToRead; track $index) {
-        <app-card-book [libro]="item" [deleteBtn]="true" (delete)="eliminarLibroSwal($event)"/>
-    }
-    <section class="card-section">
-        <button (click)="viewAddBooks()" type="button" class="add-button"><i class="profile-content__add-image ph-plus-circle"></i></button>
-    </section>
-</section>
