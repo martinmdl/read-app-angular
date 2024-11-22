@@ -1,0 +1,8 @@
+<div *ngIf="control.touched && control.errors">
+  <div *ngFor="let errorKey of getErrorKeys()">
+    <div *ngIf="errorMessages[errorKey]" class="error-message">
+      <img src="/icons/warning-red.svg" alt="warning">
+      {{ errorMessages[errorKey] }}
+    </div>
+  </div>
+</div>

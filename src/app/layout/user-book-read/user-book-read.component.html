@@ -1,0 +1,8 @@
+<h2 class="profile-content-title">Libros Leidos</h2>
+<section class="cards-profile-container">
+    <app-card-book *ngFor="let book of booksRead" [deleteBtn]="true" [libro]="book" (delete)="eliminarLibroSwal($event)"/>
+    <section class="card-section">
+        <button (click)="viewAddBooks()" type="button" class="add-button"><i class="profile-content__add-image ph-plus-circle"></i></button>
+    </section>
+</section>
+

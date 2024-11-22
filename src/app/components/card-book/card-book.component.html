@@ -1,0 +1,36 @@
+<article class="card-section">
+    <div class="card-img-container">
+        <img class="card-img-book" src="book.png" alt="book img" />
+    </div>
+    <nav class="card-nav" aria-label="Card Navigation">
+        <div class="card-titles">
+            <h2 class="card-title">{{this.libro.bookTitle | truncate:25:false}}</h2>
+            <p class="card-book-autor">{{this.libro.authorName}}</p>
+        </div>
+        <div class="card-icons">
+            <img src="icons/certificate.svg" alt="">
+            <i class="ph ph-fire"></i>
+        </div>
+    </nav>
+    <div class="card-info">
+        <div class="card-info-item">
+            <i class="ph ph-file"></i>
+            <p>{{this.libro.pagesCount}}</p>
+        </div>
+        <div class="card-info-item">
+            <i class="ph ph-text-aa"></i>
+            <p>{{this.libro.wordsCount}}</p>
+        </div>
+        <div class="card-info-item">
+            <i class="ph ph-globe"></i>
+            <p>{{this.libro.languages}}</p>
+        </div>
+        <div class="card-info-item">
+            <i class="ph ph-currency-circle-dollar"></i>
+            <p>{{this.libro.weekSales}}</p>
+        </div>
+    </div>
+    <div class="card-delete-btn">
+      <button *ngIf="deleteBtn" (click)="deleteBook()" class="card-trash-button" type="button"><i class="ph ph-trash"></i></button>
+    </div>
+</article>

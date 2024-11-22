@@ -1,0 +1,153 @@
+/* Mobile un ancho maximo de 400px */
+
+body {
+  font-size: 0.8rem;
+}
+
+main {
+  background-color: var(--backgroundOrigin);
+  color: var(--fontColorOrigin);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container__form {
+  animation: fadeIn 0.5s ease-in-out;
+  align-self: center;
+  gap: 1em;
+}
+
+.container__form-logo {
+  display: flex;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  justify-content: center;
+}
+
+.container__form-logo h1 {
+  color: var(--primaryColorOrigin);
+}
+
+.container__form-logo-svg {
+  width: 2.5em;
+  height: 100%;
+}
+
+.container__form-input {
+  padding-bottom: 1em;
+}
+
+.container__form-input input[type="text"] {
+  border: 1px solid var(--warningColor);
+}
+.container__form-input input[type="password"] {
+  background-image: url("../assets/eye.svg");
+  background-repeat: no-repeat;
+  background-position: 95%;
+  border: 1px solid var(--secondaryColorOrigin);
+}
+
+.container__form-input--warning {
+  display: flex;
+  color: var(--warningColor);
+  font-size: 0.8rem;
+  padding-top: 0.5em;
+}
+.container__form-input--warning-svg {
+  width: 2em;
+  height: 1.5em;
+}
+
+.container__form-input--warning p{
+  color: var(--warningColor);
+  align-self: center;
+}
+
+.container__form-btn {
+  width: 100%;
+  height: 4em;
+  color: var(--backgroundOrigin);
+  border-radius: 10px;
+  border-color: var(--primaryColorOrigin);
+  box-shadow: 0px 2px 2px 0px #e08c7054;
+  background-color: var(--primaryColorOrigin);
+  margin-top: 1.5em;
+}
+input {
+  width: 100%;
+  height: 3.5em;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilos para tablets */
+@media (min-width: 788px) and (max-width: 1070px) {
+  body {
+    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  }
+
+  .container {
+    background-color: var(--secondaryColorOrigin);
+  }
+  .container__form {
+    background-color: var(--backgroundOrigin);
+    width: 75%;
+    padding: 2.5em 5em 2.5em 5em;
+    border-radius: 10px;
+  }
+
+  .container__form-logo {
+    font-size: clamp(0.1rem, 4vw, 1.6rem);
+  }
+  .container__form-logo-svg { 
+    width: clamp(2em, 2.5vw, 2.5em);
+    height: 2.5em;
+  }
+
+  .container__form-input--warning {
+    font-size: clamp(0.5rem, 1.5vw, 0.8rem);
+  }
+}
+
+/* Estilos para Desktop */
+@media (min-width: 1071px) {
+  body {
+    font-size: clamp(1.1rem, 2.5vw, 1.2rem);
+  }
+  .container {
+    background-color: var(--secondaryColorOrigin);
+  }
+  .container__form {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    background-color: var(--backgroundOrigin);
+    width: 50%;
+    height: 75%;
+    padding: 0.5em 5em 0.5em 5em;
+    border-radius: 10px;
+  }
+
+  .container__form-logo {
+    font-size: clamp( 1.5rem, 2.5vw, 2.9rem);
+  }
+
+  .container__form-logo-svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .container__form-input--warning {
+    font-size: clamp(0.5rem, 1.3vw, 1.2rem);
+  }
+}

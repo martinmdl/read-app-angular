@@ -1,0 +1,18 @@
+
+    <div class="container"> 
+        <div class="containerExpanded searchBar-color" >
+            <div class="containerRestricted">
+                <app-search-bar (searchedAndPrivate)="handleSearch({ searchValue: $event.search, privateCheck: $event.privateCheck })" />
+            </div>
+        </div>
+        <p *ngIf="currentSearchValue !== ''">Buscando: {{currentSearchValue}} Privada:{{privateRecommendations}}</p>
+        <div class="containerExpanded scrollableBar">
+            <div class="containerRestricted ">
+                <section class="cards-container">
+                    @for (item of filterCurrentRecommendations; track $index) {
+                        <app-card-recomendation [showIcons]="'actions'" [recomendation]="item" (refresh)="handleRefresh()"/>
+                    }
+                </section>
+            </div>
+        </div>
+    </div>

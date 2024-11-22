@@ -1,0 +1,100 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    width: 100vw;
+    height: 4rem;
+    padding: 1rem;
+    background-color: var(--primaryColorOrigin);
+    .logo-container{
+        .logo-link{
+            display: flex;
+            align-items: center;
+            i{
+                font-size: 3rem;
+                color: var(--backgroundOrigin);
+            }
+            span{
+                color: #fff;
+                font-size: clamp(20px, 3vw, 28px);
+                font-weight: 800;
+            }
+        }
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 1rem;
+        transition: transform .3s ease-in-out;
+        transform: translateX(100%);
+        background-color: #000;
+        .navbar-list{
+            display: flex;
+            flex-direction: column;
+            .nav-item{
+                margin-bottom: 1rem;
+                text-align: center;
+                .nav-link{
+                    font-size: 18px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .nav-open{
+        transform: translateX(0%);
+    }
+    .header-buttons{
+        display: flex;
+        align-items: center;
+        .user{
+            a{
+                i{
+                    font-size: 3rem;
+                    color: var(--backgroundOrigin);
+                }
+            }
+        }
+        .nav-btn{
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            border: none;
+            font-size: 2rem;
+            color: #fff;
+            background-color: transparent;
+            cursor: pointer;
+            z-index: 1000;
+        }
+    }
+}
+@media (min-width: 768px){
+    .header{
+        top: 0;
+        bottom: unset;
+        .navbar{
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px;
+            padding: 2rem;
+            transition: transform .3s ease-in-out;
+            transform: translateX(400px);
+            background-color: #000;
+        }
+        .nav-open{
+            transform: translateX(0%);
+        }
+    }
+}

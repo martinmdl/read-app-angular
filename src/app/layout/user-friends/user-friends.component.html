@@ -1,0 +1,20 @@
+<h2 class="profile-content-title">Amigos</h2>
+<div class="profile-content__friend">
+    <section *ngFor="let friend of friendsList">
+        <div class="profile-content__box">
+            <img class="profile-content__user-image" [src]="'../users/user-1.jpg'" alt="profile-photo">
+            <p>
+                {{friend.name}}<br>
+                {{friend.username}}
+            </p>
+            <div class="card-delete-btn">
+                <button (click)="deleteFriendSwal(friend)" class="card-trash-button" type="button"><i class="ph ph-trash"></i></button>
+            </div>
+        </div>
+    </section>
+    <article class="profile-content__box">
+        <button (click)="viewUsers()" type="button" class="add-button"><i class="profile-content__add-image ph-plus-circle"></i></button>
+    </article>
+</div>
+
+

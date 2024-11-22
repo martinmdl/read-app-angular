@@ -1,0 +1,19 @@
+.cards-container-recomendacion {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  gap: 4rem;
+  margin: 3rem 0;
+}
+@media (min-width: 1071px) and (max-width: 100vw) {
+  .cards-container-recomendacion {
+    grid-template-columns: min-content min-content;
+    justify-content: start;
+    gap: 4rem;
+  }
+}
+@media (min-width: 1400px) and (max-width: 100vw) {
+  .cards-container-recomendacion {
+    grid-template-columns: min-content min-content min-content;
+  }
+}
