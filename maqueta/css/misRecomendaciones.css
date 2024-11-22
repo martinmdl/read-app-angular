@@ -1,0 +1,36 @@
+body{
+  background-color: var(--backgroundOrigin);
+  display: grid;
+  grid-template-rows: 12vh 1fr 8vh;
+  grid-template-areas:
+    "search"
+    "card"
+    "header";
+  height: 100vh;
+}
+  
+@media (min-width: 788px){
+  body{
+    grid-template-rows: 8vh 8vh 1fr;
+    grid-template-areas:
+    "header"
+    "search"
+    "card";
+    gap: 0;
+    height: 100vh;
+  }
+}
+
+/*crecimeinto de la barra de busqueda a la par de las cards*/
+@media (min-width: 788px){
+  .nav-bar__input{
+    /*300px card (2 cards) + 5em gap - 1.8em boton - 17em checkbox*/
+    width: calc(600px - 13.8em);
+  }
+}
+
+@media (min-width: 1071px){
+  .nav-bar__input{
+    width: calc(900px - 13.8em);
+  }
+}

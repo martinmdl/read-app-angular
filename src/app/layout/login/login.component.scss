@@ -1,0 +1,169 @@
+$border-color: 1px solid var(--buttonColor);
+
+main {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    .disabled-button{
+        cursor: not-allowed;
+        background-color: rgb(229, 229, 229) !important;
+        pointer-events:none;
+        color: #c0c0c0;
+
+    }
+
+    .logo {
+        display: flex;
+        font-size: 25px;
+    }
+
+    .container__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        width: 100vw;
+        padding: 0 4em 0 4em;
+
+        .container__form-input {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+
+            .input-box-username {
+                height: 40px;
+                border: $border-color;
+                padding-left: 0.5em;
+                border-radius: 6px;
+
+                &:focus {
+                    outline: none;
+                    border: 2px solid var(--buttonHoverColor);
+                }
+            }
+
+            .ng-touched.ng-invalid {
+                border-color: var(--warningColor);
+            }
+
+            .input-button-box {
+                display: flex;
+                height: 40px;
+
+                .input-box-password {
+                    min-width: calc(100% - 40px);
+                    border: $border-color;
+                    padding-left: 0.5em;
+                    border-right: none;
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+
+                    &:focus {
+                        outline: none;
+                        border: 3px solid var(--buttonHoverColor);
+                    }
+                }
+
+                .ng-touched.ng-invalid {
+                    border-color: var(--warningColor);
+                }
+
+                .button-box-password {
+                    display: flex;
+                    align-items: center;
+                    justify-self: end;
+                    border: $border-color;
+                    padding-right: 0.5em;
+                    border-left: none;
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                }
+
+                .button-touched {
+                    border-color: var(--warningColor);
+                }
+            }
+        }
+
+        .container__form-submit {
+            margin-top: 1.5em;
+            height: 40px;
+            border: $border-color;
+            padding-left: 0.5em;
+            border-radius: 6px;
+
+            &:hover {
+                background-color: var(--buttonHoverColor);
+            }
+
+            &--disabled {
+                @extend .container__form-submit;
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .error-message {
+        display: flex;
+        color: var(--warningColor);
+        font-size: small;
+        gap: 0.5em;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        height: 100vh;
+        width: 100vw;
+
+    }
+
+    to {
+        width: 450px;
+        height: 450px;
+
+    }
+}
+
+@media screen and (min-width: 500px) {
+
+    main {
+        position: absolute;
+        z-index: 1;
+        background-color: var(--secondaryColorOrigin);
+
+        .container__form {
+            justify-content: center;
+            align-items: center;
+
+            .input-box-username,
+            .container__form-submit {
+                width: 372px;
+            }
+
+            .input-box-password {
+                width: calc(372px - 40px);
+            }
+
+            .button-box-password {
+                width: 40px;
+            }
+        }
+    }
+
+    main::after {
+        content: '';
+        width: 450px;
+        height: 450px;
+        position: absolute;
+        z-index: -1;
+        background-color: var(--backgroundOrigin);
+        border-radius: 10px;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+}

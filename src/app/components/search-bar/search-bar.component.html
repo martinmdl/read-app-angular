@@ -1,0 +1,16 @@
+<div class="search-bar">
+    <form class="nav-bar__form" [formGroup]="searchForm" (ngSubmit)="onSearch()">
+      <div class="nav-bar__container">
+        <input class="nav-bar__input" type="text" placeholder=" Buscar" formControlName="search"/>
+        <button class="nav-bar__buttom" type="submit">
+          <i class="ph ph-magnifying-glass"></i>
+        </button>
+      </div>
+      @if(showCheck) {
+        <label class="checkbox__label hidden">
+          <input class="hidden" type="checkbox" formControlName="checkPrivate"/>
+          <p class="checkbox__text hidden">solo ver recomendaciones privadas</p>
+        </label>
+      }
+    </form>
+</div>

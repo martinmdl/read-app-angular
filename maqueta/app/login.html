@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/root.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>ReadApp</title>
+  </head>
+  <body>
+    <main class="container">
+      <form class="container__form">
+        <div class="container__form-logo">
+          <img
+            class="container__form-logo-svg no-select"
+            src="../assets/book-bookmark-fill.svg"
+            alt="icon book"
+          />
+          <h1 class="no-select">ReadApp</h1>
+        </div>
+        <div class="container__form-input">
+          <label for="username">Usuario*</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Usuario"
+            required
+          />
+          <div class="container__form-input--warning">
+            <img
+              class="container__form-input--warning-svg no-select"
+              src="../assets/warning.svg"
+              alt="icon book"
+            />
+            <p class="no-select">El nombre de usuario es obligatorio.</p>
+          </div>
+        </div>
+        <div class="container__form-input">
+          <label for="password">Password*</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button class="container__form-btn" type="submit">Ingresar</button>
+      </form>
+    </main>
+  </body>
+</html>

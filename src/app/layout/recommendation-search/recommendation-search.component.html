@@ -1,0 +1,30 @@
+<app-header />
+<main>
+    @if (EsPadre()) {
+    <div class="containerExpanded searchBar-color">
+        <div class="containerRestricted">
+            <app-search-bar [showCheck]="false" (searchedAndPrivate)="handleSearch({ searchValue: $event.search })" />
+        </div>
+    </div>
+    <div class="containerExpanded scrollableBar">
+        <div class="containerRestricted ">
+            <section class="cards-container">
+                @for (item of filterCurrentRecommendations; track $index) {
+                    @if(this.ownRecommendationValidation(item)) {
+                    <app-card-recomendation [showIcons]="'actions'" [recomendation]="item" (refresh)="handleRefresh()"/>
+                    }
+                    @else if(this.canAssessValidation(item)) {
+                    <app-card-recomendation [showIcons]="'heart'" [recomendation]="item"/>
+                    }
+                    @else {
+                    <app-card-recomendation [recomendation]="item"/>
+                    }
+                }
+            </section>
+        </div>
+    </div>
+    }
+    @else {
+    <router-outlet />
+    }
+</main>

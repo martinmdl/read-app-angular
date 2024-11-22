@@ -1,0 +1,6 @@
+<h2 class="profile-content-title">Recomendaciones a valorar</h2>
+<section class="cards-profile-container">
+    @for (item of currentRecommendations; track $index) {
+        <app-card-recomendation [recomendation]="item" [showIcons]="'heart'" (refresh)="handleRefresh()" />
+    }
+</section>
