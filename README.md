@@ -1,6 +1,6 @@
 # Readapp2024Grupo2
 
-![Coverage](./badges/readapp-2024-grupo-2/coverage.svg)
+[![Build](https://github.com/martinmdl/read-app-angular/actions/workflows/build.yml/badge.svg)](https://github.com/martinmdl/read-app-angular/actions/workflows/build.yml) ![Coverage](./badges/readapp-2024-grupo-2/coverage.svg)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
 
